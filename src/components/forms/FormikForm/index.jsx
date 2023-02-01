@@ -1,8 +1,8 @@
-import React from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { FORM_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas'
-import styles from './FormikForm.module.sass'
-import Input from '../Input'
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { FORM_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas';
+import styles from './FormikForm.module.sass';
+import Input from '../Input';
 
 function FormikForm () {
   const initialValues = {
@@ -11,20 +11,20 @@ function FormikForm () {
     displayName: '',
     email: '',
     password: '',
-    passwordConfirmation: ''
-  }
+    passwordConfirmation: '',
+  };
 
   const handleSubmit = (values, formikBag) => {
-    console.log('Submit form with values', values)
-    formikBag.resetForm()
-  }
+    console.log('Submit form with values', values);
+    formikBag.resetForm();
+  };
 
   const classes = {
     error: styles.error,
     input: styles.input,
     valid: styles.valid,
-    invalid: styles.invalid
-  }
+    invalid: styles.invalid,
+  };
 
   return (
     <Formik
@@ -74,7 +74,7 @@ function FormikForm () {
         <button type='submit'>Create Account</button>
       </Form>
     </Formik>
-  )
+  );
 }
 
-export default FormikForm
+export default FormikForm;

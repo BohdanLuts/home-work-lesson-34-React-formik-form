@@ -1,4 +1,4 @@
-import * as yup from 'yup'
+import * as yup from 'yup';
 
 export const FORM_VALIDATION_SCHEMA = yup.object({
   firstName: yup
@@ -19,7 +19,7 @@ export const FORM_VALIDATION_SCHEMA = yup.object({
     .min(4, 'Display name should be more than 4 characters')
     .max(20)
     .required(),
-  email: yup.string().email('Please check the format of email address')
+  email: yup.string().email('Please check the format of email address'),
   // password: yup
   //   .min(8)
   //   .max(20)
@@ -33,4 +33,4 @@ export const FORM_VALIDATION_SCHEMA = yup.object({
   //     'Password confirmation needs to match original password'
   //   )
   //   .required()
-})
+});
