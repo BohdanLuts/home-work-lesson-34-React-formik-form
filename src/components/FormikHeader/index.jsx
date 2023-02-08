@@ -6,7 +6,7 @@ function FormikHeader () {
   return (
     <div className={styles.signupHeader}>
       <div className={styles.logo}>
-        <a href='#'>
+        <a href='https://www.squadhelp.com/'>
           <img src={logo} alt='Logo' className={styles.logoImg} />
         </a>
       </div>

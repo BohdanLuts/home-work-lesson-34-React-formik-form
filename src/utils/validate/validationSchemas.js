@@ -1,36 +1,44 @@
 import * as yup from 'yup';
 
-export const FORM_VALIDATION_SCHEMA = yup.object({
-  firstName: yup
-    .string()
-    .trim()
-    .min(2)
-    .max(64)
-    .required('Field cannot be empty'),
-  lastName: yup
-    .string()
-    .trim()
-    .min(2)
-    .max(64)
-    .required('Field cannot be empty'),
+const NAME_VALIDATION_SCHEMA = yup
+  .string()
+  .trim()
+  .min(2)
+  .max(64)
+  .required('Field cannot be empty');
+
+const PASSWORD_VALIDATION_SCHEMA = yup
+  .string()
+  .min(8)
+  .max(20)
+  .matches(
+    /^(?=.*[A-Z].*).{8,20}$/,
+    'Password must have minimum one uppercase letter'
+  )
+  .matches(
+    /^(?=.*[a-z].*).{8,20}$/,
+    'Password must have minimum one lowercase letter'
+  )
+  .matches(
+    /^(?=.*[!@#$%^&*.].*).{8,20}$/,
+    'Password must have minimum one Special character'
+  );
+export const SIGNUP_VALIDATION_SCHEMA = yup.object({
+  firstName: NAME_VALIDATION_SCHEMA,
+  lastName: NAME_VALIDATION_SCHEMA,
   displayName: yup
     .string()
     .trim()
     .min(4, 'Display name should be more than 4 characters')
     .max(20)
     .required(),
-  email: yup.string().email('Please check the format of email address'),
-  // password: yup
-  //   .min(8)
-  //   .max(20)
-  //   .matches(/^(?=.*[A-Z].*)(?=.*[a-z].*)(?=.*\d.*)(?=.*[!@#$%^&*_].*).{8,32}$/)
-  //   .required(),
-  // passwordConfirmation: yup
-  //   .min(8)
-  //   .max(20)
-  //   .matches(
-  //     /^(?=.*[A-Z].*)(?=.*[a-z].*)(?=.*\d.*)(?=.*[!@#$%^&*_].*).{8,32}$/,
-  //     'Password confirmation needs to match original password'
-  //   )
-  //   .required()
+  email: yup
+    .string()
+    .email('Please check the format of email address')
+    .required(),
+  password: PASSWORD_VALIDATION_SCHEMA.required(),
+  passwordConfirmation: yup
+    .string()
+    .oneOf([yup.ref('password')])
+    .required(),
 });
