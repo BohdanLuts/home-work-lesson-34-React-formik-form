@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { SIGNUP_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas';
 import styles from './CreateForm.module.sass';
 import Input from '../Input';
@@ -15,7 +15,6 @@ function CreateForm () {
   };
 
   const handleSubmit = (values, formikBag) => {
-    console.log('Submit form with values', values);
     formikBag.resetForm();
   };
 

@@ -1,20 +1,30 @@
+@import './../../common/style/vars'
+
+section
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
 .content 
   display: flex
   flex-direction: column
   justify-content: space-between
   align-items: center
-  // background-color: #3ea9f5
   padding: 0 10%
   font-family: Helvetica
   text-align: center
 
+h2, h4, .terms, .terms a
+  color: $main-text-color
+
 h2
-  color: #fff
   font-size: 38px
   font-weight: bold
+  @media screen and (max-width: 570px)
+    font-size: 22px
   
 h4
-  color: #fff
   font-size: 18px
   font-weight: 500
   line-height: 27px
@@ -28,8 +38,4 @@ section
     width: 95%
   
 .terms
-  margin: 0 0 10px
-  color: #fff
   margin: 10px 0
-  a
-    color: #fff

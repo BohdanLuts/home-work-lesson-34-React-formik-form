@@ -1,5 +1,5 @@
 import React from 'react';
-import FormikHeader from '../../components/FormikHeader';
+import Header from '../../components/Header';
 import CreateForm from '../../components/forms/CreateForm';
 import GoogleSignButton from '../../components/GoogleSignButton';
 import styles from './LoginPage.module.sass';
@@ -8,7 +8,7 @@ function LoginPage () {
   return (
     <div className={styles.content}>
       <section>
-        <FormikHeader />
+        <Header />
         <h2>CREATE AN ACCOUNT</h2>
         <h4>We always keep your name and email address private.</h4>
         <CreateForm />

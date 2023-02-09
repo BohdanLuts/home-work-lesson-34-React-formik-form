@@ -1,3 +1,5 @@
+@import './../../../common/style/vars'
+
 .form 
   display: flex
   flex-direction: column
@@ -5,6 +7,7 @@
   width: 100%
   margin: 0 auto
   padding: 10px
+  color: $main-text-color
 
   label 
     display: flex
@@ -23,16 +26,12 @@
   border: 1px solid #b72522
   margin: 5px 15px
   font-size: 13px
-  color: #fff
   padding: 5px
   text-align: center
 
 .input 
   color: #9CA8B7
-  margin: 0
   width: 100%
-  box-sizing: border-box
-  height: auto
   padding: 21px 23px
     
 .inputRow
@@ -43,20 +42,21 @@
     flex-direction: column
 
 .createButton
-    background-color: #28d2d0
-    border-radius: 4px
-    width: 96%
-    border: 0
-    padding: 12px 0
-    color: #fff
-    font-size: 16px
-    font-weight: bold
-    align-self: center
-    cursor: pointer
-    margin: 10px
+  background-color: #28d2d0
+  color: $main-text-color
+  font-size: 16px
+  font-weight: bold
+  cursor: pointer
+  margin: 10px
+  max-width: 750px
+  width: 98%
+  border: 0
+  border-radius: 4px
+  padding: 12px 0
+  align-self: center
 
 .valid 
-  border: 1px solid green
+  border: 2px solid green
 
 .invalid 
-  border: 1px solid red
+  border: 2px solid red

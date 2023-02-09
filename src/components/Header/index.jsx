@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './FormikHeader.module.sass';
+import styles from './Header.module.sass';
 import logo from './../../img/logo.png';
 
-function FormikHeader () {
+function Header () {
   return (
     <div className={styles.signupHeader}>
       <div className={styles.logo}>
@@ -17,4 +17,4 @@ function FormikHeader () {
   );
 }
 
-export default FormikHeader;
+export default Header;
