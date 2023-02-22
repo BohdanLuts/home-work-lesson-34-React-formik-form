@@ -31,14 +31,14 @@ export const SIGNUP_VALIDATION_SCHEMA = yup.object({
     .trim()
     .min(4, 'Display name should be more than 4 characters')
     .max(20)
-    .required(),
+    .required('Display name cannot be empty'),
   email: yup
     .string()
     .email('Please check the format of email address')
-    .required(),
+    .required('Please, сhoose security password'),
   password: PASSWORD_VALIDATION_SCHEMA.required(),
   passwordConfirmation: yup
     .string()
-    .oneOf([yup.ref('password')])
-    .required(),
+    .oneOf([yup.ref('password')], 'Passwords must match')
+    .required('Please, repeate your password'),
 });
